@@ -1,0 +1,51 @@
+{
+           "swagger": "2.0",
+           "info": {
+           "version": "1.0.0",
+           "title": "HelloWorld",
+           "x-lastModified": "Jul 29, 2017 23:13PM PST"
+           },
+           "paths": {
+           "/hello/{name}": {
+               "get": {
+               "produces": [
+                   "application/json"
+               ],
+               "responses": {
+                   "200": {
+                   "description": "Success response",
+                   "schema": {
+                       "$ref": "#/definitions/GetResponseSchema"
+                   },
+                   "examples": {
+                       "application/json": {
+                       "message": "Hello World!"
+                       }
+                   }
+                   }
+               },
+               "parameters": [
+                   {
+                   "name": "name",
+                   "in": "path",
+                   "description": "",
+                   "required": true,
+                   "type": "string",
+                   "format": ""
+                   }
+               ]
+               }
+           }
+           },
+           "definitions": {
+           "GetResponseSchema": {
+               "type": "object",
+               "properties": {
+               "message": {
+                   "type": "string",
+                   "default": "Hello World!"
+               }
+               }
+           }
+           }
+}
